@@ -51,7 +51,7 @@ class Trader:
         else:
             if(self.mode == True and self.budget>=1000):
                 n = 10-len(self.wallet)
-                for i in range(n):
+                for _ in range(n):
                     ran = random.randint(0, 100)
                     self.buy(data[ran], 1000)
                 print('BUY')

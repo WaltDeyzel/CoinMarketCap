@@ -1,13 +1,12 @@
-bitcoin : R 430078.95 | 22.03%
-ethereum : R 10840.73 | 18.21%
-cardano : R 2.64 | 14.02%
-litecoin : R 1884.87 | 10.67%
-zcash : R 967.92 | 6.88%
-monero : R 2413.91 | 4.54%
-golem : R 1.63 | 3.02%
-qtum : R 33.14 | -3.11%
-omg network : R 38.34 | -3.5%
-lisk : R 17.19 | -4.79%
-civic : R 1.28 | -6.84%
-neo : R 212.35 | -7.07%
-xrp : R 3.53 | -32.34%
+cardano : R 14.28 | 11.5%
+bitcoin : R 709834 | -1.52%
+neo : R 566 | -9.31%
+monero : R 2873 | -11.58%
+xrp : R 6.84 | -12.82%
+ethereum : R 22696 | -12.98%
+litecoin : R 2588 | -16.43%
+lisk : R 37.79 | -21.04%
+qtum : R 74.37 | -21.76%
+zcash : R 1777 | -24.85%
+civic : R 5.12 | -25.47%
+omg network : R 66.55 | -26.97%

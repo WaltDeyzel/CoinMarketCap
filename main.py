@@ -10,6 +10,7 @@ if __name__ == "__main__":
         if(sys.argv[1] == 'time'):
             for i in range(12):
                 CryptoData.show(CryptoData,data)
+                CryptoData.writeFile(CryptoData, data)
                 sleep(600) # 10 min 12 times = 2 hours
                 os.system('cmd /c "cls"')
                 data = CryptoData.getData(CryptoData)

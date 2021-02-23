@@ -26,6 +26,7 @@ class CryptoData:
     data = []
     #SPESIFIC COINS 
     wallet = ['BTC', 'GNT', 'ETH', 'ADA', 'CVC', 'OMG', 'ZEC', 'XRP', 'LTC', 'LSK', 'NEO', 'XMR', 'QTUM'] 
+    bitcoin_marketcap = 0
 
     try:
       response = session.get(url, params=parameters)
@@ -54,6 +55,10 @@ class CryptoData:
         #Add spesific coins to seprate list
         if tag in wallet:
             star = '*'
+        if no == 1:
+          bitcoin_marketcap = marketcap
+        marketcap = round(marketcap/bitcoin_marketcap, 3)
+        volume_24h = round(volume_24h/bitcoin_marketcap, 3)
         
         item = CoinData(id, no, star, name, tag, price, change1h, change24h, change7d, roi, marketcap, num_market_pairs, date_added, circulating_supply, max_supply, total_supply, volume_24h)
         data.append(item)
@@ -112,6 +117,8 @@ class CryptoData:
     for coin in watchlist:
       name = coin.name
       price = coin.price
+      if price > 100:
+        price = round(price)
       change = coin.change7d
       message += str(name) + " : R " + str(price) + " | " + str(change)+"%\n"
 
