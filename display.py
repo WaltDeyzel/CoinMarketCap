@@ -3,7 +3,7 @@ from constants import Constants as con
 class DisplayData:
     heading = con.heading
 
-    def displayData(self, hourly, daily, weekly):
+    def displayData(self, hourly, daily, weekly, monthly, sixty, ninety):
         #DISPLAY DATA SET
         #DISPLAY TOP 10
         n = con.numberOfElements
@@ -13,13 +13,22 @@ class DisplayData:
         daily_best = daily[-n:]
         weekly_worst = weekly[:n+1]
         weekly_best = weekly[-n:]
+        monthly_worst = monthly[:n+1]
+        monthly_best = monthly[-n:]
+        sixty_worst = sixty[:n+1]
+        sixty_best = sixty[-n:]
+        ninety_worst = ninety[:n+1]
+        ninety_best = ninety[-n:]
 
         hourly_best.reverse()
         weekly_best.reverse()
         daily_best.reverse()
+        monthly_best.reverse()
+        sixty_best.reverse()
+        ninety_best.reverse()
         #----------------------------------------------------------------------------------------------
         #sections hourly, daily, weekly
-        bestPerforming = [[hourly_best, hourly_worst], [daily_best, daily_worst], [weekly_best, weekly_worst]]
+        bestPerforming = [[hourly_best, hourly_worst], [daily_best, daily_worst], [weekly_best, weekly_worst], [monthly_best, monthly_worst], [sixty_best, sixty_worst], [ninety_best, ninety_worst]]
 
         for section in bestPerforming:
             print()
@@ -42,6 +51,18 @@ class DisplayData:
                 if(section == bestPerforming[2]):
                     displayL = lhs[i].displayWeekly()
                     displayR = rhs[i].displayWeekly()
+                
+                if(section == bestPerforming[3]):
+                    displayL = lhs[i].displayMonthly()
+                    displayR = rhs[i].displayMonthly()
+                
+                if(section == bestPerforming[4]):
+                    displayL = lhs[i].displaySixty()
+                    displayR = rhs[i].displaySixty()
+                
+                if(section == bestPerforming[5]):
+                    displayL = lhs[i].displayNinety()
+                    displayR = rhs[i].displayNinety()
                 
                 print(displayL,'|', displayR,'|')
             print(con.stripes, con.stripes)

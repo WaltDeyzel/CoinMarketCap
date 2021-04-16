@@ -1,7 +1,7 @@
 from constants import Constants as con
 import webbrowser
 class CoinData:
-    def __init__(self, id, no, star, name, tag, price, change1h, change24h, change7d, roi, marketcap, num_market_pairs, date_added, circulating_supply, max_supply, total_supply, volume_24h):
+    def __init__(self, id, no, star, name, tag, price, change1h, change24h, change7d, change30d, change60d, change90d, roi, marketcap, num_market_pairs, date_added, circulating_supply, max_supply, total_supply, volume_24h):
         self.id = id
         self.no = no
         self.star = star
@@ -11,6 +11,9 @@ class CoinData:
         self.change1h = change1h
         self.change24h = change24h
         self.change7d = change7d
+        self.change30d = change30d
+        self.change60d = change60d
+        self.change90d = change90d
         self.roi = roi
         self.marketcap = marketcap
         self.num_market_pairs = num_market_pairs
@@ -28,6 +31,15 @@ class CoinData:
     
     def displayHourly(self): #default hourly
         return(CoinData.display(self, self.change1h))
+    
+    def displayMonthly(self): #default hourly
+        return(CoinData.display(self, self.change30d))
+    
+    def displaySixty(self): #default hourly
+        return(CoinData.display(self, self.change60d))
+    
+    def displayNinety(self): #default hourly
+        return(CoinData.display(self, self.change90d))
 
     def display(self, change):
         return(con.fmt.format(self.star,self.no, self.getName(), con.currency+str(self.price), str(change)+' %', self.marketcap, self.volume_24h, self.getVolumeCapRatio(), self.getSupplyRatio())) 

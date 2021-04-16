@@ -14,4 +14,4 @@ class Constants:
     currency = 'R '
     stripes = '-------------------------------------------------------------------------------------------------------'
     heading = fmt.format(' ','NO','COIN', 'PRICE', 'CHANGE', 'MARKETCAP', 'VOLUME', 'V/MC', 'SUPPLY')
-    numberOfElements = 20
+    numberOfElements = 10
