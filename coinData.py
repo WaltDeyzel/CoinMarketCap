@@ -40,6 +40,9 @@ class CoinData:
     
     def displayNinety(self): #default hourly
         return(CoinData.display(self, self.change90d))
+    
+    def displayGrowth(self):        
+        return(con.gfmt.format(self.star, self.no, self.getName(), con.currency+str(self.price), str(self.change1h) +' %', str(self.change24h) +' %', str(self.change7d) +' %', str(self.change30d) +' %', str(self.change60d) +' %', str(self.change90d) +' %')) 
 
     def display(self, change):
         return(con.fmt.format(self.star,self.no, self.getName(), con.currency+str(self.price), str(change)+' %', self.marketcap, self.volume_24h, self.getVolumeCapRatio(), self.getSupplyRatio())) 

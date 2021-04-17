@@ -59,11 +59,11 @@ class CryptoData:
         hourly = sorted(data, key=operator.attrgetter('change1h'))
         daily = sorted(data, key=operator.attrgetter('change24h'))
         weekly = sorted(data, key=operator.attrgetter('change7d'))
-
+        percent_change_info = [hourly, daily, weekly] 
         watchlist = CryptoData.getWatchlist(self, data)
         worst = CryptoData.getWorstPerforming(self, weekly, 30)
 
-        DisplayData.displayData(DisplayData, hourly, daily, weekly)
+        DisplayData.displayData(DisplayData, percent_change_info)
         DisplayData.displayWatchlist(DisplayData, watchlist)
         DisplayData.displayWorstPerforming(DisplayData, worst)
     

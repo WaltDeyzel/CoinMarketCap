@@ -14,4 +14,6 @@ class Constants:
     currency = 'R '
     stripes = '-------------------------------------------------------------------------------------------------------'
     heading = fmt.format(' ','NO','COIN', 'PRICE', 'CHANGE', 'MARKETCAP', 'VOLUME', 'V/MC', 'SUPPLY')
+    gfmt = '{:<2} {:<3} {:<22} {:<13} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}'
+    growth_heading = gfmt.format(' ','NO','COIN', 'PRICE', '1H', '24H', '7D', '30D', '60D', '90D')
     numberOfElements = 10
