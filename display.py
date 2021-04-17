@@ -44,6 +44,8 @@ class DisplayData:
         print(con.stripes, con.stripes)
         i = 0
         for pair in pair_list:
+            print(self.heading, self.heading)
+            print(con.stripes, con.stripes)
             DisplayData.displaySection(DisplayData, pair, tags[i])
             i += 1
             print(con.stripes, con.stripes)
@@ -69,7 +71,7 @@ class DisplayData:
         print(con.stripes, con.stripes)
         print()
         print('___________________________________GROWTH___________________________________')
-        print(self.heading)
+        print(con.growth_heading)
         print(con.stripes, con.stripes)
 
         for coin in watchlist:
