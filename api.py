@@ -111,7 +111,6 @@ class CryptoData:
   def getWatchlist(self, data):
       watchlist = []
       for coin in data:
-          print(coin)
           if(coin.star == '*'):
               watchlist.append(coin)
       watchlist = CryptoData.filter(self, watchlist, 'change7d')

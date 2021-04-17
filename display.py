@@ -6,56 +6,46 @@ class DisplayData:
     def getPairs(self, percent_change_info):
         #DISPLAY TOP 10
         n = con.numberOfElements
-        bestPerforming = []
+        pairs = []
         for percent_change in percent_change_info:
             best = percent_change[:n+1]
-            best.reverse()
             worst = percent_change[-n:]
+            worst.reverse()
             pair = [worst, best]
-            bestPerforming.append(pair)
-        return bestPerforming
+            pairs.append(pair)
+        return pairs
+    
+    def displaySection(self, pairs, tag):
+
+        for i in range(len(pairs[0])):
+            DisplayData.displayData2(DisplayData, pairs[0][i], pairs[1][i],tag)
+    
+    def displayData2(self, left, right, tag):
+        if tag == '1h':
+            print(left.displayHourly(),'|', right.displayHourly(),'|')
+        elif tag == '24h':
+            print(left.displayDaily(),'|', right.displayDaily(),'|')
+        elif tag == '7d':
+            print(left.displayWeekly(),'|', right.displayWeekly(),'|')
+        elif tag == '30d':
+            print(left.displayMonthly(),'|', right.displayMonthly(),'|')
+        elif tag == '60d':
+            print(left.displaySixty(),'|', right.displaySixty(),'|')
+        elif tag == '90d':
+            print(left.displayNinety(),'|', right.displayNinety(),'|')
+        else:
+            print('displayData error')
 
     def displayData(self, percent_change_info):
         #DISPLAY DATA SET
-        #DISPLAY TOP 10
-        n = con.numberOfElements
-        bestPerforming = DisplayData.getPairs(DisplayData, percent_change_info)
-
-        for section in bestPerforming:
-            print()
-            print(self.heading, ' ', self.heading)
-            print(con.stripes, con.stripes)
-            
-            lhs = section[0] # DATA DISPLAYED ON THE LEFT
-            rhs = section[1] # DATA DISPLAYED ON THE RIGHT
-
-            for i in range(n):
-                displayL = lhs[i].displayDaily()
-                displayR = rhs[i].displayDaily()
-
-                if(section == bestPerforming[0]):
-                    displayL = lhs[i].displayHourly()
-                    displayR = rhs[i].displayHourly()
-            
-                #DO NOT NEED TO CHECH FOR SECTION == BESTPERFORMING[1] BECAUSE IT IS THE DEFAULT
-                    
-                if(section == bestPerforming[2]):
-                    displayL = lhs[i].displayWeekly()
-                    displayR = rhs[i].displayWeekly()
-                
-                if(section == bestPerforming[3]):
-                    displayL = lhs[i].displayMonthly()
-                    displayR = rhs[i].displayMonthly()
-                
-                if(section == bestPerforming[4]):
-                    displayL = lhs[i].displaySixty()
-                    displayR = rhs[i].displaySixty()
-                
-                if(section == bestPerforming[5]):
-                    displayL = lhs[i].displayNinety()
-                    displayR = rhs[i].displayNinety()
-                
-                print(displayL,'|', displayR,'|')
+        
+        pair_list = DisplayData.getPairs(DisplayData, percent_change_info)
+        tags = ['1h', '24h', '7d', '30d', '60d', '90d']
+        print(con.stripes, con.stripes)
+        i = 0
+        for pair in pair_list:
+            DisplayData.displaySection(DisplayData, pair, tags[i])
+            i += 1
             print(con.stripes, con.stripes)
     
     def displayWatchlist(self, watchlist):

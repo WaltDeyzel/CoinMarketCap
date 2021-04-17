@@ -42,7 +42,7 @@ class CoinData:
         return(CoinData.display(self, self.change90d))
     
     def displayGrowth(self):
-        fmt = '{:<2} {:<3} {:<22} {:<13} {:<10} {:<10} {:<10} {:<10} {:<10}'
+        fmt = '{:<2} {:<3} {:<22} {:<13} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}'
         return(fmt.format(self.star, self.no, self.getName(), con.currency+str(self.price), str(self.change1h) +' %', str(self.change24h) +' %', str(self.change7d) +' %', str(self.change30d) +' %', str(self.change60d) +' %', str(self.change90d) +' %')) 
 
     def display(self, change):
