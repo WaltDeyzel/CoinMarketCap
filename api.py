@@ -90,14 +90,15 @@ class CryptoData:
           monthly = sorted(data, key=operator.attrgetter('change30d'))
           sixty = sorted(data, key=operator.attrgetter('change60d'))
           ninety = sorted(data, key=operator.attrgetter('change90d'))
-          # persentage_change = [hourly, daily, weekly, monthly, sixty, ninety] future changes
+          percent_change_info = [hourly, daily, weekly, monthly, sixty, ninety] 
 
           watchlist = CryptoData.getWatchlist(self, data)
           worst = CryptoData.getWorstPerforming(self, weekly, 30)
 
-          DisplayData.displayData(DisplayData, hourly, daily, weekly, monthly, sixty, ninety)
+          DisplayData.displayData(DisplayData, percent_change_info)
           DisplayData.displayWatchlist(DisplayData, watchlist)
           DisplayData.displayWorstPerforming(DisplayData, worst)
+          DisplayData.displayGrowth(DisplayData, watchlist)
   
   def filter(self, data, category):
     return(sorted(data, key=operator.attrgetter(category)))
@@ -110,6 +111,7 @@ class CryptoData:
   def getWatchlist(self, data):
       watchlist = []
       for coin in data:
+          print(coin)
           if(coin.star == '*'):
               watchlist.append(coin)
       watchlist = CryptoData.filter(self, watchlist, 'change7d')

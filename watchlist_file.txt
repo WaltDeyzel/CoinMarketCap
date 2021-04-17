@@ -1,15 +1,15 @@
-xrp : R 24.23 | 64.51%
-dash : R 5385 | 37.81%
-neo : R 1208 | 36.77%
-litecoin : R 4384 | 36.03%
-zcash : R 3753 | 33.45%
-monero : R 4914 | 20.48%
-cardano : R 20.6 | 18.69%
-qtum : R 259 | 17.29%
-ethereum : R 34903 | 17.11%
-civic : R 9.55 | 10.33%
-theta : R 197 | 9.32%
-bitcoin : R 884530 | 5.56%
-polkadot : R 602 | 2.73%
-omg network : R 141 | 1.44%
-lisk : R 99.28 | -0.98%
+neo : R 1369 | 51.26%
+xrp : R 23.51 | 39.96%
+zcash : R 4027 | 39.16%
+dash : R 5411 | 37.4%
+litecoin : R 4524 | 34.77%
+monero : R 5149 | 22.45%
+qtum : R 266 | 19.37%
+cardano : R 20.29 | 14.33%
+polkadot : R 675 | 11.49%
+ethereum : R 34702 | 11.03%
+civic : R 9.35 | 7.92%
+theta : R 194 | 4.4%
+bitcoin : R 880405 | 0.51%
+omg network : R 143 | -3.84%
+lisk : R 96.5 | -4.91%
