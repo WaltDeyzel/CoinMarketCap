@@ -31,7 +31,7 @@ class CryptoData:
     try:
       response = session.get(url, params=parameters)
       data1 = json.loads(response.text)
-      print(type(data1['data'][0]['quote']['ZAR']['percent_change_90d']))
+      # print(type(data1['data'][0]['quote']['ZAR']['percent_change_90d']))
       for coin in data1['data']:
         
         no   = coin['cmc_rank']
